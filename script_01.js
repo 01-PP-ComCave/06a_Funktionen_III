@@ -18,12 +18,13 @@ const INFO_STR_OP = "Please insert correct operator [ + | - | * | : | / ]:";
 const INFO_STR_RES = "The result is: ";
 const INFO_STR_PRE_NUM = "Please insert ";
 const INFO_STR_POST_NUM = " number:";
+const patt = /^[0-9]$/g; 
 
 /** Variable (Global)*/
 let isNotAborted; 
 
 // application / App
-startApp();
+// startApp();
 function startApp() {
     let num1,num2,op;
     isNotAborted = true;
@@ -40,14 +41,16 @@ function startApp() {
 }
 
 // module: data input | test:
-// output(getNumber("1st"));
+output(getNumber("1st"));
 function getNumber(figure) {
     let displayStr = INFO_STR_PRE_NUM + figure + INFO_STR_POST_NUM;
     let inputStr = prompt(displayStr) 
     let num = parseInt(inputStr);
 
+   
     // if num is NOT a number AND user DIDN'T click at Abbrechen
-    while (isNaN(num) && (inputStr !== null)) {
+    // while (isNaN(num) && (inputStr !== null)) {
+    while (!patt.test(inputStr) && (inputStr !== null)) {    
         inputStr =  prompt(displayStr);
         num = parseInt(inputStr); 
     }
