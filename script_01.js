@@ -18,7 +18,7 @@ const INFO_STR_OP = "Please insert correct operator [ + | - | * | : | / ]:";
 const INFO_STR_RES = "The result is: ";
 const INFO_STR_PRE_NUM = "Please insert ";
 const INFO_STR_POST_NUM = " number:";
-const patt = /^[0-9]$/g; 
+const patt = /^[0-9]{1,5}$/g; 
 
 /** Variable (Global)*/
 let isNotAborted; 
